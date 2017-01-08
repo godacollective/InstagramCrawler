@@ -1,5 +1,5 @@
 # Description
-An Selenium-based web Instagram crawler. Used for the [Instarigami](https://vimeo.com/198317130) installation.
+Selenium-based web Instagram crawler. Used for the [Instarigami](https://vimeo.com/198317130) installation.
 
 This is a forked version of [InstagramCrawler](https://github.com/iammrhelo/InstagramCrawler), updated for Python 3 support and additional functionality. The InstagramCrawler class resides in a separate file, which makes it easier to import into other code. The crawler also stores the names of all the images downloaded in `downloaded_images` which can be cleared by calling the `clear_downloads_list` method of the crawler.
 
