@@ -39,6 +39,7 @@ FOLLOWING_PATH = "//div[contains(text(), 'Following')]"
 TIME_TO_CAPTION_PATH = "../../following-sibling::ul/*/*/span"
 MOST_RECENT_HEADER = '>Most recent<'
 PRINT_DEBUG = False
+CSS_COUNT = "span._fd86t>"
 
 """
 
@@ -216,7 +217,7 @@ class InstagramCrawler(object):
            if PRINT_DEBUG:
               print(num)
            num = ( 0 if not num else int(num) )
-
+           num = int(number_to_download)
         # number_to_download should be a string instance
            if number_to_download == "all":
                return num
@@ -263,11 +264,12 @@ class InstagramCrawler(object):
             loadmore.click()
 
             num_to_scroll = int((self.number - 12)/12) + 1
+            # print(self.number, num_to_scroll)
             for _ in range(num_to_scroll):
                 self.driver.execute_script(SCROLL_DOWN)
-                time.sleep(0.05)
+                time.sleep(0.5)
                 self.driver.execute_script(SCROLL_UP)
-                time.sleep(0.05)
+                time.sleep(0.5)
 
         has_recent = False
         recent_n = 0 
